@@ -1,0 +1,22 @@
+<h1>Status Updates</h1>
+
+ <table>
+   <tr>
+     <th> Status </th>
+     <th>  User </th>
+     <th> Like?! </th>
+     <th></th>
+     <th></th>
+   </tr>
+
+   <tbody>
+     <% @statuses.each do |status| %>
+     <tr>
+       <td><%= status.message %> </td>
+       <td><%= status.name %> </td>
+       <td><%= status.like %> </td>
+     </tr>
+     <% end %>
+<%= link_to "Create Status", new_status_path %> 
+   </tbody>
+ </table>

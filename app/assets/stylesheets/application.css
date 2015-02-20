@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .status-container {
+   display: flex;
+   padding: 1em;
+   box-sizing: border-box;
+
+   .message {
+     order: 1;
+     width: 80%;
+     margin: 0;
+   }
+
+   .like {
+     text-align: right;
+     width: 20%;
+     order: 2;
+     color: #ccc;
+     font-size: .9em;
+   }
+
+   .name {
+     font-style: italic;
+     color: gray;
