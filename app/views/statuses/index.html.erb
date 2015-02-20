@@ -1,5 +1,8 @@
 <h1>Status Updates</h1>
 
+
+
+
  <table>
    <tr>
      <th> Status </th>
@@ -9,14 +12,16 @@
      <th></th>
    </tr>
 
+
    <tbody>
      <% @statuses.each do |status| %>
      <tr>
-       <td><%= status.message %> </td>
+       <td><%=link_to status.message, status_path(status) %> </td>
        <td><%= status.name %> </td>
-       <td><%= status.like %> </td>
+       <td><%= pluralize(status.votes.count, "like") %><%= button_to 'Like!', upvote_status_path(status), method: :post %>
+       <td><%= link_to "Update Status", edit_status_path(status)%> </td>
      </tr>
      <% end %>
-<%= link_to "Create Status", new_status_path %> 
+<%= link_to "Create Status", new_status_path %>
    </tbody>
  </table>

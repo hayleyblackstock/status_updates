@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 root 'statuses#index'
 
   # You can have the root of your site routed with "root"
-resources :statuses
+resources :statuses do
+  member do
+    post 'upvote'
+  end
+end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
