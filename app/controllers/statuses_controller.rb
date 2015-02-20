@@ -40,6 +40,12 @@ end
     redirect_to statuses_path
   end
 
+  def destroy
+    @status = Status.find(params[:id])
+    @status.destroy
+    redirect_to statuses_path, notice: 'Status was successfully deleted.'
+  end
+
   private
   def status_params
     params.require(:status).permit(:message, :name, :like)

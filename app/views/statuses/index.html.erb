@@ -20,6 +20,7 @@
        <td><%= status.name %> </td>
        <td><%= pluralize(status.votes.count, "like") %><%= button_to 'Like!', upvote_status_path(status), method: :post %>
        <td><%= link_to "Update Status", edit_status_path(status)%> </td>
+       <td><%= link_to "Delete Status", status_path(status), method: :delete%> </td>
      </tr>
      <% end %>
 <%= link_to "Create Status", new_status_path %>
